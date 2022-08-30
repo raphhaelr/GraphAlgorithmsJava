@@ -201,7 +201,7 @@ public class Graph {
     R.add(u);
 
     for (int v = 0; v<this.adjMatrix[u].length; v++) {
-      if(this.adjMatrix[u][v] != 0){
+      if(this.adjMatrix[u][v] != 0 && desc[v] == 0){
         if(desc[v] == 0){
           dfs_rec_aux(v, desc, R);
         }
