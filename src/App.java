@@ -42,101 +42,7 @@ class App {
             filePath = "files/maze/maze50.txt"; 
         }
 
-        System.out.print("1 - Dijkstra\n");
-        System.out.print("2 - Bellman Ford\n");
-        System.out.print("3 - Bellman Ford melhorado\n");
-        System.out.print("4 - Floyd Warshall\n");
-        System.out.print("5 - Sair\n");
-
-        System.out.print("Escolha a opção do algoritmo: ");
-
-        int algorithm = menu.nextInt();
-
-        if (algorithm == 1) {
-            GraphList graph;
-            try {
-                System.out.println(filePath);
-                graph = new GraphList(filePath);
-
-                System.out.print("Digite o vértice de início: ");
-
-                int startNode = menu.nextInt();
-
-                System.out.print("Digite o vértice final: ");
-
-                int finishNode = menu.nextInt();
-
-                graph.dijkstra(startNode, finishNode);
-
-                menu.close();
-            } catch (IOException e) {
-                // TODO Auto-generated catch block
-                e.printStackTrace();
-            }
-
-        } else if (algorithm == 2) {
-            GraphList graph;
-            try {
-                graph = new GraphList(filePath);
-
-                System.out.print("Digite o vértice de início: ");
-
-                int startNode = menu.nextInt();
-
-                System.out.print("Digite o vértice final: ");
-
-                int finishNode = menu.nextInt();
-
-                graph.bellmanFord(startNode, finishNode);
-
-                menu.close();
-            } catch (IOException e) {
-                // TODO Auto-generated catch block
-                e.printStackTrace();
-            }
-
-        } else if (algorithm == 3) {
-            GraphList graph;
-            try {
-                graph = new GraphList(filePath);
-
-                System.out.print("Digite o vértice de início: ");
-
-                int startNode = menu.nextInt();
-
-                System.out.print("Digite o vértice final: ");
-
-                int finishNode = menu.nextInt();
-
-                graph.improvedBellmanFord(startNode, finishNode);
-
-                menu.close();
-            } catch (IOException e) {
-                // TODO Auto-generated catch block
-                e.printStackTrace();
-            }
-
-        } else if (algorithm == 4){
-            GraphMatrix graph;
-            try {
-                graph = new GraphMatrix(filePath);
-
-                System.out.print("Digite o vértice de início: ");
-
-                int startNode = menu.nextInt();
-
-                System.out.print("Digite o vértice final: ");
-
-                int finishNode = menu.nextInt();
-
-                graph.floydWarshall(startNode, finishNode);
-
-                menu.close();
-            } catch (IOException e) {
-                // TODO Auto-generated catch block
-                e.printStackTrace();
-            }
-        }
+        
         return;
     }
 
@@ -293,7 +199,7 @@ class App {
 
         int opcao = menu.nextInt();
 
-        if (opcao == 4) {
+        if (opcao == 3) {
             System.out.print("\nAté logo!");
             menu.close();
         }
@@ -301,17 +207,10 @@ class App {
         switch (opcao) {
             case 1:
                 application.showSubMenu();
-
                 break;
-
             case 2:
-                System.out.print("\nOpção Clientes Selecionado\n");
+                application.showSubMenuLabirinto();
                 break;
-
-            case 3:
-                System.out.print("\nOpção Produtos Selecionado\n");
-                break;
-
             default:
                 System.out.print("\nOpção Inválida!");
                 break;
